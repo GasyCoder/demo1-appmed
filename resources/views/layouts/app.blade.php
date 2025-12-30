@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @PwaHead
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.demo') ? config('app.demo_label') . ' — ' : '' }}{{ config('app.name', 'Laravel') }}</title>
     <link rel="icon" type="image/png" href="{{ asset('assets/image/logo.png') }}">
 
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
@@ -41,6 +41,16 @@
            dark:bg-gray-950 dark:text-gray-100"
     x-data="{ sidebarOpen: false }"
 >
+    @if(config('app.demo'))
+        <div class="sticky top-0 z-50 bg-amber-100 text-amber-900 border-b border-amber-200">
+            <div class="mx-auto max-w-7xl px-3 sm:px-4 lg:px-6 py-2 text-sm font-medium flex items-center justify-center gap-2">
+                <span class="inline-flex items-center rounded-full bg-amber-200/70 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-amber-900">
+                    {{ config('app.demo_label') }}
+                </span>
+                <span>{{ config('app.demo_notice') }}</span>
+            </div>
+        </div>
+    @endif
     <div class="flex-1 flex flex-col">
         @unless($isStudent)
             @include('layouts.partials.top-bar')
@@ -81,6 +91,10 @@
                class="text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300">
                 GasyCoder
             </a>
+            @if(config('app.demo'))
+                <span class="mx-2 dark:text-gray-500">•</span>
+                <span class="text-amber-600 dark:text-amber-400 font-medium">{{ config('app.demo_label') }}</span>
+            @endif
         </div>
     </footer>
 

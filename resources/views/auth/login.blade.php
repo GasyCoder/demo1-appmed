@@ -31,6 +31,16 @@
                             Accédez à votre espace en toute sécurité.
                         </p>
                     </div>
+                    @if(config('app.demo'))
+                        <div class="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+                            <div class="flex items-start gap-2">
+                                <span class="inline-flex items-center rounded-full bg-amber-200/70 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-amber-900">
+                                    {{ config('app.demo_label') }}
+                                </span>
+                                <p>{{ config('app.demo_notice') }}</p>
+                            </div>
+                        </div>
+                    @endif
                 </div>
 
                 {{-- Flash / Errors --}}
