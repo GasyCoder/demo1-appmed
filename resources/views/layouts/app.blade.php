@@ -7,7 +7,15 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @PwaHead
 
+<<<<<<< Updated upstream
     <title>{{ config('app.demo') ? config('app.demo_label') . ' — ' : '' }}{{ config('app.name', 'Laravel') }}</title>
+=======
+    <title>
+        @if(config('app.demo.enabled')){{ config('app.demo.label', 'DEMO') }} — @endif
+        {{ config('app.name', 'Laravel') }}
+    </title>
+
+>>>>>>> Stashed changes
     <link rel="icon" type="image/png" href="{{ asset('assets/image/logo.png') }}">
 
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">

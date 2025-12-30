@@ -13,6 +13,12 @@ return [
     |
     */
 
+    'demo' => [
+        'enabled' => env('APP_DEMO', false),
+        'label' => env('APP_DEMO_LABEL', 'DEMO'),
+        'contact_url' => env('APP_DEMO_CONTACT_URL', null),
+    ],
+
     'name' => env('APP_NAME', 'Laravel'),
     'version' => env('APP_VERSION', '0.0.0'),
     'build' => env('APP_BUILD', trim((string) shell_exec('git describe --tags --always --dirty 2>/dev/null'))),

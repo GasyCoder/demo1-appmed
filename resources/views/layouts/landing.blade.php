@@ -6,7 +6,7 @@
     <meta name="chatbot-auth" content="{{ auth()->check() ? '1' : '0' }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.demo') ? config('app.demo_label') . ' — ' : '' }}EpiRC — Plateforme Épidémiologie & Recherche Clinique</title>
+    <title>EpiRC — Plateforme Épidémiologie & Recherche Clinique</title>
     <meta name="description" content="Plateforme en ligne du parcours Épidémiologie et Recherche Clinique (EpiRC) — Faculté de Médecine, Université de Mahajanga">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
