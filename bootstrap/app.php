@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\CheckLicense;
+use App\Http\Middleware\DemoWriteGuard;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -15,6 +16,14 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->validateCsrfTokens(except: [
 
+        ]);
+
+        $middleware->appendToGroup('web', [
+            DemoWriteGuard::class,
+        ]);
+
+        $middleware->appendToGroup('api', [
+            DemoWriteGuard::class,
         ]);
 
         // Ajout du middleware de licence
