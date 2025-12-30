@@ -30,6 +30,16 @@
                         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
                             Accédez à votre espace en toute sécurité.
                         </p>
+                        <div class="mt-3">
+                            <a href="{{ route('home') }}"
+                               class="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">
+                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h5m8-11v10a1 1 0 01-1 1h-5m-6 0h6"/>
+                                </svg>
+                                Retour à l’accueil
+                            </a>
+                        </div>
                     </div>
                     @if(config('app.demo'))
                         @php
