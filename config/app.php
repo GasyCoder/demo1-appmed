@@ -16,6 +16,9 @@ return [
     'name' => env('APP_NAME', 'Laravel'),
     'version' => env('APP_VERSION', '0.0.0'),
     'build' => env('APP_BUILD', trim((string) shell_exec('git describe --tags --always --dirty 2>/dev/null'))),
+    'demo' => (bool) env('APP_DEMO', false),
+    'demo_label' => env('APP_DEMO_LABEL', 'DEMO'),
+    'demo_notice' => env('APP_DEMO_NOTICE', 'Version démonstration — données fictives — aucun impact production'),
     /*
     |--------------------------------------------------------------------------
     | Application Environment
