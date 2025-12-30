@@ -16,7 +16,10 @@
 
             <div class="mt-4">
                 <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" placeholder="ex: demo.utilisateur@app.com" />
+                <p class="mt-1 text-xs text-gray-500">
+                    Utilisez un email fictif si vous testez l'application (ex: demo.etudiant@app.com).
+                </p>
             </div>
 
             <div class="mt-4">
