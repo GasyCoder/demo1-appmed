@@ -40,6 +40,26 @@
                                 <p>{{ config('app.demo_notice') }}</p>
                             </div>
                         </div>
+                        <div class="mt-4 rounded-xl border border-blue-100 bg-blue-50/70 px-4 py-3 text-sm text-blue-900">
+                            <p class="font-semibold">Comptes de démonstration</p>
+                            <ul class="mt-2 space-y-1 text-sm">
+                                <li class="flex flex-wrap items-center gap-x-2 gap-y-1">
+                                    <span class="rounded-full bg-blue-200/70 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-blue-900">Admin</span>
+                                    <span class="font-medium">admin@app.com</span>
+                                    <span class="text-xs text-blue-700">• Mot de passe : Admin@@123</span>
+                                </li>
+                                <li class="flex flex-wrap items-center gap-x-2 gap-y-1">
+                                    <span class="rounded-full bg-blue-200/70 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-blue-900">Enseignant</span>
+                                    <span class="font-medium">rakoto@example.com</span>
+                                    <span class="text-xs text-blue-700">• Mot de passe : password</span>
+                                </li>
+                                <li class="flex flex-wrap items-center gap-x-2 gap-y-1">
+                                    <span class="rounded-full bg-blue-200/70 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-blue-900">Étudiant</span>
+                                    <span class="font-medium">rasoa@example.com</span>
+                                    <span class="text-xs text-blue-700">• Mot de passe : password</span>
+                                </li>
+                            </ul>
+                        </div>
                     @endif
                 </div>
 
@@ -200,7 +220,16 @@
 
                 {{-- Footer --}}
                 <div class="px-6 py-5 bg-gray-50 dark:bg-gray-800/40">
-                    <p class="text-sm text-center text-gray-600 dark:text-gray-400">
+                    <div class="flex justify-center">
+                        <a href="{{ url('/') }}"
+                           class="inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm hover:border-gray-300 hover:text-gray-900 dark:border-white/10 dark:bg-gray-900/40 dark:text-gray-200 dark:hover:text-white">
+                            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h5m4 0h5a1 1 0 001-1V10" />
+                            </svg>
+                            Retour à l'accueil
+                        </a>
+                    </div>
+                    <p class="mt-4 text-sm text-center text-gray-600 dark:text-gray-400">
                         Vous n'avez pas de compte ?
                         <a href="/inscription"
                            class="font-semibold text-gray-900 dark:text-white hover:underline underline-offset-2">
