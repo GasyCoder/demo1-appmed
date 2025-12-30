@@ -6,7 +6,7 @@
     <meta name="chatbot-auth" content="{{ auth()->check() ? '1' : '0' }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>EpiRC — Plateforme Épidémiologie & Recherche Clinique</title>
+    <title>{{ config('app.demo') ? config('app.demo_label') . ' — ' : '' }}EpiRC — Plateforme Épidémiologie & Recherche Clinique</title>
     <meta name="description" content="Plateforme en ligne du parcours Épidémiologie et Recherche Clinique (EpiRC) — Faculté de Médecine, Université de Mahajanga">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -24,6 +24,16 @@
     <header id="landingHeader"
             class="fixed top-0 left-0 right-0 z-50 border-b border-gray-200/70 dark:border-gray-800/70
                    bg-white/70 dark:bg-gray-950/70 backdrop-blur">
+        @if(config('app.demo'))
+            <div class="w-full bg-amber-100 text-amber-900 border-b border-amber-200">
+                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-center gap-2 text-sm font-medium">
+                    <span class="inline-flex items-center rounded-full bg-amber-200/70 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-amber-900">
+                        {{ config('app.demo_label') }}
+                    </span>
+                    <span>{{ config('app.demo_notice') }}</span>
+                </div>
+            </div>
+        @endif
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
             {{-- Brand --}}
             <a href="#top" class="flex items-center gap-4 min-w-0">
@@ -34,8 +44,13 @@
                 >
 
                 <div class="min-w-0 leading-tight">
-                    <div class="text-base lg:text-lg font-semibold text-gray-900 dark:text-white truncate">
+                    <div class="text-base lg:text-lg font-semibold text-gray-900 dark:text-white truncate flex items-center gap-2">
                         EpiRC
+                        @if(config('app.demo'))
+                            <span class="inline-flex items-center rounded-full bg-amber-100 text-amber-900 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide">
+                                {{ config('app.demo_label') }}
+                            </span>
+                        @endif
                     </div>
                     <div class="text-xs lg:text-sm text-gray-500 dark:text-gray-400 truncate">
                         Faculté de Médecine — UMG
@@ -142,6 +157,10 @@
 
             <div class="mt-8 text-center text-xs text-gray-500 dark:text-gray-400">
                 © {{ date('Y') }} Faculté de Médecine — Université de Mahajanga. Conçu par <a href="https://me.gasycoder.com" class="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300" target="_blank">GasyCoder</a>. Tous droits réservés.
+                @if(config('app.demo'))
+                    <span class="mx-2">•</span>
+                    <span class="text-amber-600 dark:text-amber-400 font-medium">{{ config('app.demo_label') }}</span>
+                @endif
             </div>
         </div>
     </footer>

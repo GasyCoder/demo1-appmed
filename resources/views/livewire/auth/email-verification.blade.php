@@ -30,6 +30,21 @@
                         <p class="text-sm text-gray-600 dark:text-gray-400">
                             Pour des raisons de sécurité, seuls les emails universitaires déjà enregistrés sont autorisés à continuer l’inscription.
                         </p>
+                        @if(config('app.demo'))
+                            <div class="mt-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs text-amber-900">
+                                <div class="flex items-start gap-2">
+                                    <span class="inline-flex items-center rounded-full bg-amber-200/70 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-900">
+                                        {{ config('app.demo_label') }}
+                                    </span>
+                                    <div class="space-y-1">
+                                        <p>{{ config('app.demo_notice') }}</p>
+                                        <p class="font-semibold text-amber-950">
+                                            Email fictif de démonstration : {{ config('app.demo_register_email') }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
                     </div>
                 </div>
 

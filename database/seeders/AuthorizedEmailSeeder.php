@@ -11,6 +11,8 @@ class AuthorizedEmailSeeder extends Seeder
     public function run(): void
     {
         $emails = [
+            // DEMO (inscription)
+            'demo.etudiant@facmed.mg',
             // Enseignants de la Faculté de Médecine
             'francineravaotiana@gmail.com',
             'lanjamanarivo@gmail.com',

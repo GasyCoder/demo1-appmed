@@ -16,6 +16,27 @@ return [
     'name' => env('APP_NAME', 'Laravel'),
     'version' => env('APP_VERSION', '0.0.0'),
     'build' => env('APP_BUILD', trim((string) shell_exec('git describe --tags --always --dirty 2>/dev/null'))),
+    'demo' => (bool) env('APP_DEMO', false),
+    'demo_label' => env('APP_DEMO_LABEL', 'DEMO'),
+    'demo_notice' => env('APP_DEMO_NOTICE', 'Version démonstration — données fictives — aucun impact production'),
+    'demo_register_email' => 'demo.etudiant@facmed.mg',
+    'demo_users' => [
+        [
+            'role' => 'Admin',
+            'email' => 'admin@app.com',
+            'password' => 'Admin@@123',
+        ],
+        [
+            'role' => 'Enseignant',
+            'email' => 'rakoto@example.com',
+            'password' => 'password',
+        ],
+        [
+            'role' => 'Étudiant',
+            'email' => 'rasoa@example.com',
+            'password' => 'password',
+        ],
+    ],
     /*
     |--------------------------------------------------------------------------
     | Application Environment

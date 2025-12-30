@@ -31,6 +31,35 @@
                             Accédez à votre espace en toute sécurité.
                         </p>
                     </div>
+                    @if(config('app.demo'))
+                        @php
+                            $demoUsers = config('app.demo_users', []);
+                        @endphp
+                        <div class="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+                            <div class="flex items-start gap-2">
+                                <span class="inline-flex items-center rounded-full bg-amber-200/70 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-amber-900">
+                                    {{ config('app.demo_label') }}
+                                </span>
+                                <div class="space-y-2">
+                                    <p>{{ config('app.demo_notice') }}</p>
+                                    @if(!empty($demoUsers))
+                                        <div class="space-y-1 text-xs sm:text-sm">
+                                            <div class="font-semibold text-amber-950">Comptes de démonstration :</div>
+                                            <ul class="grid gap-1 sm:grid-cols-2">
+                                                @foreach($demoUsers as $user)
+                                                    <li class="rounded-lg bg-white/70 px-2.5 py-1.5 text-amber-900 border border-amber-200/70">
+                                                        <div class="font-medium">{{ $user['role'] }}</div>
+                                                        <div class="text-[11px] sm:text-xs">Email : {{ $user['email'] }}</div>
+                                                        <div class="text-[11px] sm:text-xs">Mot de passe : {{ $user['password'] }}</div>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                 </div>
 
                 {{-- Flash / Errors --}}
